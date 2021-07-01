@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout con Stripe</title>
+
+    <style>
+        html {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        *, *::after, *::before {
+            box-sizing: inherit;
+        }
+
+        body {
+            border-top: 0.5rem solid #3d424d;
+            margin: 0;
+            background-color: #20252e;
+            color: #f7f7f7;
+        }
+
+        .header {
+            text-align: center;
+            padding-top: 4vh;
+            padding-bottom: 2vh;
+            margin-bottom: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 85%;
+        }
+
+        .header__h1 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .products {
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background-color: #616161;
+            padding: 1rem;
+            flex: 1 1 250px;
+            transition: transform 0.3s ease-out;
+        }
+
+        .product:hover {
+            transform: scale(0.9);
+        }
+
+        .product__img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product__caption {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product__description {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .product__price {
+            font-weight: bold;
+            color: #000;
+            padding: 5px;
+            display: block;
+            width: 70%;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: greenyellow;
+            border-radius: 10px;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+
+        .footer {
+            margin-top: 8vh;
+            padding: 1rem;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            border-top: 1px solid #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__h1">Checkout con Stripe</h1>
+    </header>
+
+    <section id="products" class="products"></section>
+
+    <footer class="footer">NADA</footer>
+
+    <template id="product-template">
+        <figure class="product">
+            <img class="product__img">
+            <figcaption class="product__caption"></figcaption>
+        </figure>
+    </template>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="script.js"></script>
+</body>
+</html>
